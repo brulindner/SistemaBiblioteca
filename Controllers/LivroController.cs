@@ -56,5 +56,22 @@ namespace SistemaBiblioteca.Controllers
 
             return Ok(livro);
         }
+
+        [HttpPut("{id}")]
+
+        public async Task<IActionResult> UpdateLivro(int id, [FromBody] Livro livroAtualizado)
+        {
+            var livroExistente = await _appDbContext.BIBLIOTECA.FindAsync(id);
+
+            if (livroExistente == null)
+            {
+                return NotFound("Livro não encontrado!");
+            }
+
+            _appDbContext.Entry(livroExistente).CurrentValues.SetValues(livroAtualizado);
+
+            await _appDbContext.SaveChangesAsync();
+            return StatusCode(201, livroExistente);
+        }
     }
 }
