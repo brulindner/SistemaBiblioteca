@@ -73,5 +73,22 @@ namespace SistemaBiblioteca.Controllers
             await _appDbContext.SaveChangesAsync();
             return StatusCode(201, livroExistente);
         }
+
+        [HttpDelete("{id}")]
+
+        public async Task<IActionResult> DeleteLivro(int id)
+        {
+            var livro = await _appDbContext.BIBLIOTECA.FindAsync(id);
+
+            if (livro == null)
+            {
+                return NotFound("Livro não encontrado!");
+            }
+
+            _appDbContext.BIBLIOTECA.Remove(livro);
+
+            await _appDbContext.SaveChangesAsync();
+            return Ok("Livro removido");
+        }
     }
 }
