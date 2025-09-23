@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using SistemaBiblioteca.Data;
 using SistemaBiblioteca.Models;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace SistemaBiblioteca.Controllers
 {
@@ -85,6 +86,18 @@ namespace SistemaBiblioteca.Controllers
             await _appDbContext.SaveChangesAsync();
 
             return Ok(new { Message = "Livro devolvido com sucesso", Emprestimo = emprestimo });
+        }
+
+        [HttpGet]
+
+        public async Task<IActionResult> ListarEmprestimos()
+        {
+            var emprestimos = await _appDbContext.Emprestimos
+            .Include(e => e.Aluno)
+            .Include(e => e.Livro)
+            .ToListAsync();
+
+            return Ok(emprestimos);
         }
     }
 }
