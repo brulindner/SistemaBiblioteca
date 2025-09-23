@@ -25,6 +25,5 @@ namespace SistemaBiblioteca.Models
         [Phone]
         public string Telefone { get; set; }
 
-        public ICollection<Emprestimo> Emprestimos { get; set; }
     }
 }
