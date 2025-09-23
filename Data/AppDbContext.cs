@@ -12,5 +12,8 @@ namespace SistemaBiblioteca.Data
         public AppDbContext(DbContextOptions options) : base(options) { }
 
         public DbSet<Livro> BIBLIOTECA { get; set; }
+        public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Emprestimo> Emprestimos { get; set; }
     }
+
 }
