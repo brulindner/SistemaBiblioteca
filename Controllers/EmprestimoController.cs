@@ -99,5 +99,19 @@ namespace SistemaBiblioteca.Controllers
 
             return Ok(emprestimos);
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetEmprestimo(int id)
+        {
+            var emprestimo = await _appDbContext.Emprestimos
+            .Include(e => e.Aluno)
+            .Include(e => e.Livro)
+            .FirstOrDefaultAsync(e => e.Id == id);
+
+            if (emprestimo == null)
+                return NotFound();
+
+            return Ok(emprestimo);
+        }
     }
 }
