@@ -34,10 +34,10 @@ Este projeto é uma **API REST** desenvolvida em **C# com .NET** e integrada ao 
 2. Configure a connection string no arquivo Program.cs para o seu banco MySQL.
    
 3. Execute as migrations (se estiver utilizando EF Core):
-   dotnet ef database update
+   ```dotnet ef database update```
 
 4. Rode o Projeto
-   dotnet run
+   ```dotnet run```
 
 5. Acesse os endpoints via navegador ou Postman.
 
