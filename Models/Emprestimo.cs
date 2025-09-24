@@ -29,7 +29,5 @@ namespace SistemaBiblioteca.Models
         [ForeignKey("AlunoId")]
         public Aluno Aluno { get; set; }
 
-        [NotMapped]
-        public decimal Multa { get; set; }
     }
 }

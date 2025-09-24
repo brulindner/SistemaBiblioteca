@@ -77,12 +77,6 @@ namespace SistemaBiblioteca.Controllers
 
             emprestimo.DataDevolucaoRealizada = DateTime.Now;
 
-            if (emprestimo.DataDevolucaoRealizada > emprestimo.DataDevolucaoPrevista)
-            {
-                var diasAtraso = (int)(emprestimo.DataDevolucaoRealizada.Value - emprestimo.DataDevolucaoPrevista).TotalDays;
-                emprestimo.Multa = diasAtraso * 2.50m;
-            }
-
             await _appDbContext.SaveChangesAsync();
 
             return Ok(new { Message = "Livro devolvido com sucesso", Emprestimo = emprestimo });
