@@ -41,52 +41,52 @@ Este projeto é uma **API REST** desenvolvida em **C# com .NET** e integrada ao 
 
 5. Acesse os endpoints via navegador ou Postman.
 
-📌 Exemplos de Endpoints
+📌 Exemplos de Endpoints <br>
 👩‍🎓 Alunos
 
-GET /aluno → Lista todos os alunos
-GET /aluno/{id} → Retorna um aluno pelo ID
-POST /aluno → Cadastra um novo aluno
+GET /aluno → Lista todos os alunos <br>
+GET /aluno/{id} → Retorna um aluno pelo ID <br>
+POST /aluno → Cadastra um novo aluno <br>
 
-{
-  "matricula": "2025001",
-  "nome": "Maria Silva",
-  "cpf": "12345678900",
-  "telefone": "99999-9999"
+{ <br>
+  "matricula": "2025001",   
+  "nome": "Maria Silva",   
+  "cpf": "12345678900",  
+  "telefone": "99999-9999"  
 }
 
-PUT /aluno/{id} → Atualiza os dados de um aluno
-DELETE /aluno/{id} → Remove um aluno
+PUT /aluno/{id} → Atualiza os dados de um aluno <br>
+DELETE /aluno/{id} → Remove um aluno <br>
 
-📚 Livros
+📚 Livros <br>
 
-GET /livro → Lista todos os livros
-GET /livro/{id} → Retorna um livro pelo ID
-POST /livro → Cadastra um novo livro
+GET /livro → Lista todos os livros  
+GET /livro/{id} → Retorna um livro pelo ID  
+POST /livro → Cadastra um novo livro  
 
-{
-  "titulo": "O Senhor dos Anéis",
-  "autor": "J.R.R. Tolkien",
-  "genero": "Aventura"
-}
+{  
+  "titulo": "O Senhor dos Anéis",  
+  "autor": "J.R.R. Tolkien",  
+  "genero": "Aventura"  
+}  
 
-PUT /livro/{id} → Atualiza os dados de um livro
-DELETE /livro/{id} → Remove um livro
+PUT /livro/{id} → Atualiza os dados de um livro <br>
+DELETE /livro/{id} → Remove um livro <br>
 
-⏳ Empréstimos
+⏳ Empréstimos<br>
 
-GET /emprestimo → Lista todos os empréstimos
-GET /emprestimo/{id} → Retorna um empréstimo pelo ID
-POST /emprestimo → Registra um novo empréstimo
+GET /emprestimo → Lista todos os empréstimos  
+GET /emprestimo/{id} → Retorna um empréstimo pelo ID  
+POST /emprestimo → Registra um novo empréstimo  
 
-{
-  "alunoId": 1,
-  "livroId": 2,
-  "dataEmprestimo": "2025-09-20",
-  "dataDevolucao": "2025-10-20"
-}
+{  
+  "alunoId": 1,  
+  "livroId": 2,  
+  "dataEmprestimo": "2025-09-20",  
+  "dataDevolucao": "2025-10-20"  
+}  
 
-PUT /emprestimo/{id} → Atualiza um empréstimo
-DELETE /emprestimo/{id} → Remove um empréstimo
+PUT /emprestimo/{id} → Atualiza um empréstimo <br>
+DELETE /emprestimo/{id} → Remove um empréstimo <br>
  
 ✨ Desenvolvido para estudos e prática de backend.
